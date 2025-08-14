@@ -1,0 +1,18 @@
+{
+  "name": "mfe-poc",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "concurrently \"npm run start:container\" \"npm run start:mfe1\"",
+    "start:container": "npm start --workspace=container",
+    "start:mfe1": "npm start --workspace=micro-frontend-1",
+    "build": "npm run build --workspaces",
+    "install:all": "npm install && npm install --workspaces"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
